@@ -15,6 +15,16 @@ Crypto currency price tracker.
   - CoinJar
     - Coin
 
-### ⚠ Note: Before running this on your localhost make sure you have the latest version of [npm](https://nodejs.org/).
 
-Go to the repo directory and type `npm start` to run the pre-production version of this site.
+## FAQs
+#### 1. How to preview this app?
+A) Before running please make sure you have installed [Node.js](https://nodejs.org/en/) in your system. Open VS Code Terminal and goto the folder where you have downloaded this repo. 
+   * Type `npm start` to run the development version of this app.
+   
+#### 2. How to build and run the production build of the app?
+A) In directory of this repo, Run the following commands in Terminal: 
+   * `npm build` to build the optimized production stage app. 
+   * `npm i -g serve` to install **serve** globally in your system.(Ignore this if **serve** is already installed)
+   * `serve -s build -p 3000` will run the production build of this app at port 3000 of localhost.
+   * Type `http://localhost:3000` on your browser to see the app.
+
