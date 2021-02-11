@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/crypto-blaze/static/css/main.5f651559.chunk.css",
+    "main.js": "/crypto-blaze/static/js/main.0469d6cd.chunk.js",
+    "main.js.map": "/crypto-blaze/static/js/main.0469d6cd.chunk.js.map",
+    "runtime-main.js": "/crypto-blaze/static/js/runtime-main.7da382bb.js",
+    "runtime-main.js.map": "/crypto-blaze/static/js/runtime-main.7da382bb.js.map",
+    "static/js/2.2791306f.chunk.js": "/crypto-blaze/static/js/2.2791306f.chunk.js",
+    "static/js/2.2791306f.chunk.js.map": "/crypto-blaze/static/js/2.2791306f.chunk.js.map",
+    "static/js/3.8e7d354f.chunk.js": "/crypto-blaze/static/js/3.8e7d354f.chunk.js",
+    "static/js/3.8e7d354f.chunk.js.map": "/crypto-blaze/static/js/3.8e7d354f.chunk.js.map",
+    "index.html": "/crypto-blaze/index.html",
+    "static/css/main.5f651559.chunk.css.map": "/crypto-blaze/static/css/main.5f651559.chunk.css.map",
+    "static/js/2.2791306f.chunk.js.LICENSE.txt": "/crypto-blaze/static/js/2.2791306f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/crypto-blaze/static/media/fancy-pants.52bbdfa6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7da382bb.js",
+    "static/js/2.2791306f.chunk.js",
+    "static/css/main.5f651559.chunk.css",
+    "static/js/main.0469d6cd.chunk.js"
+  ]
+}
