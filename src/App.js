@@ -1,66 +1,35 @@
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import { useState } from "react";
-import AddTask from "./components/AddTask";
+import axios from "axios";
+import CoinsJar from "./components/CoinsJar";
 
 function App() {
-  const [showAddTask, setShowAddTask] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Doctors appointment",
-      day: "Feb 5th at 2:30pm",
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: "Do Lunch",
-      day: "Feb 5th at 3:30pm",
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: "Goto Movies",
-      day: "Feb 6th at 7:30pm",
-      reminder: false,
-    },
-  ]);
 
-  //Add Task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-    const newTask = { id, ...task };
-    setTasks([...tasks, newTask]);
-  };
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Delete Task
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-    console.log("working", id);
-  };
+  useEffect(() => {
+    const fetchItems = async () => {
+      //setIsLoading(true);
+      const result = await axios(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=15&page=1&sparkline=false&price_change_percentage=24hr%2C7d`
+      );
 
-  const toggleReminder = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
-      )
-    );
-  };
+      console.log(result.data);
+
+      setItems(result.data);
+      setIsLoading(false);
+    }
+    fetchItems()
+  },[]);
 
   return (
     <div className="container">
-      <Header
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-      />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-      ) : (
-        "No Tasks left"
-      )}
+      <Header title="CryptoBlaze" description="Where investment gets interesting."/>
+      <CoinsJar isLoading={isLoading} items={items} />
     </div>
   );
 }
+
 
 export default App;
